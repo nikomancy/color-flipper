@@ -14,9 +14,6 @@ function changeColor() {
   setBgColor(newColor)
 }
 
-
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>
