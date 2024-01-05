@@ -20,7 +20,7 @@ function changeColor() {
           <img src={viteLogo} className="logo" alt="Vite logo" />
           <img src={reactLogo} className="logo react" alt="React logo" />
       </div>
-      <h1>Vite + React</h1>
+      <h1 style={{backgroundColor: 'rgba(128, 128, 128, 0.6' }}>Background Color: {bgColor}</h1>
       <div className="card">
         <button onClick={changeColor}>
           Change Background Color
