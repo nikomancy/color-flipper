@@ -10,12 +10,21 @@ function App() {
 }, [bgColor])
 
 // Calculates whether the background color is dark or light and sets the background color for the root element accordingly
-function getContrastingColor(hexColor) {
+function getContrastingBackgroundColor(hexColor) {
   const r = parseInt(hexColor.substr(1, 2), 16);
   const g = parseInt(hexColor.substr(3, 2), 16);
   const b = parseInt(hexColor.substr(5, 2), 16);
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
   return brightness > 128 ? 'rgba(30, 30, 30, 0.6)' : 'rgba(255, 255, 255, 0.6)';
+}
+
+// Calculates whether the background color is dark or light and sets the text color for the root element accordingly
+function getContrastingTextColor(hexColor) {
+  const r = parseInt(hexColor.substr(1, 2), 16);
+  const g = parseInt(hexColor.substr(3, 2), 16);
+  const b = parseInt(hexColor.substr(5, 2), 16);
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness > 128 ? 'rgb(255, 255, 255)' : 'rgb(60, 60, 60)';
 }
 
 
@@ -25,7 +34,7 @@ function changeColor() {
 }
 
   return (
-    <div style={{backgroundColor:getContrastingColor(bgColor)}}>
+    <div style={{backgroundColor:getContrastingBackgroundColor(bgColor), color:getContrastingTextColor(bgColor)}} >
       <div>
           <img src={viteLogo} className="logo" alt="Vite logo" />
           <img src={reactLogo} className="logo react" alt="React logo" />
