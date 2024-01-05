@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body {
+  transition: background-color 1s ease;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +43,14 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.info-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
+  transition: color 1s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
 }

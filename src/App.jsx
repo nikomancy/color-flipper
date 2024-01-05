@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -34,11 +32,7 @@ function changeColor() {
 }
 
   return (
-    <div style={{backgroundColor:getContrastingBackgroundColor(bgColor), color:getContrastingTextColor(bgColor)}} >
-      <div>
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-          <img src={reactLogo} className="logo react" alt="React logo" />
-      </div>
+    <div className="info-panel" style={{backgroundColor:getContrastingBackgroundColor(bgColor), color:getContrastingTextColor(bgColor)}} >
       <h1>Background Color: {bgColor}</h1>
       <div className="card">
         <button onClick={changeColor}>
