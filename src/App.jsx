@@ -2,10 +2,30 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+  
   const [bgColor, setBgColor] = useState('#ffffff')
   useEffect(() => {
     document.body.style.backgroundColor = bgColor;
 }, [bgColor])
+
+const [displayColor, setDisplayColor] = useState(bgColor)
+
+// Use effect for the "type in" effect on the background color text
+useEffect(() => {
+  let i = 1; // start from 1 to skip the '#' character
+  let newDisplayColor = '#'; // start with '#' character
+  const timer = setInterval(() => {
+    if (i < bgColor.length) {
+      newDisplayColor += bgColor[i];
+      i++;
+    } else {
+      setDisplayColor(newDisplayColor);
+      clearInterval(timer);
+    }
+  }, 100); // adjust timing as needed
+  return () => clearInterval(timer);
+}, [bgColor]);
+
 
 // Calculates whether the background color is dark or light and sets the background color for the root element accordingly
 function getContrastingBackgroundColor(hexColor) {
@@ -33,7 +53,7 @@ function changeColor() {
 
   return (
     <div className="info-panel" style={{backgroundColor:getContrastingBackgroundColor(bgColor), color:getContrastingTextColor(bgColor)}} >
-      <h1>Background Color: {bgColor}</h1>
+      <h1>Background Color: {displayColor}</h1>
       <div className="card">
         <button onClick={changeColor}>
           Change Background Color

@@ -1,10 +1,10 @@
 # color-flipper
 
-# React + Vite
+The point of the color flipper was to practice working with Vite + React and to build some components that change their color based on the color of other components.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I want to come back and add in:
 
-Currently, two official plugins are available:
+- A typewriter effect to the color value.
+- A tasteful gradient to the background color to make it pop a bit more.
+- Some way to look up the hex value on [a website that gives color names](https://www.color-name.com/) and update text to show that name in addition to the value.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
